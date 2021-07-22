@@ -32,7 +32,7 @@ const artistHomePosition = [3,7]
 function createGridOne() {
   for (let i = 0; i < cellCount; i++) {
     const cell = document.createElement('div')
-    cell.textContent = i
+    // cell.textContent = i
     gridOne.appendChild(cell)
     cells.push(cell)
   }

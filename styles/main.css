@@ -17,7 +17,7 @@ h1 {
   font-family: 'Nothing You Could Do', cursive;
   text-align: center;
   font-size:60px;
-  margin: 50px 0px 0px 130px;
+  margin: 50px 0px 0px 110px;
   /* padding: 30px; */
   width: 500px;
   /* background-image: url('https://media.istockphoto.com/vectors/colorful-watercolor-splashes-vector-id1144872767?k=6&m=1144872767&s=612x612&w=0&h=yaqnDfbl0NZ9AUnhHQCa5XWkn0JfHqmi4Ve_WSKuFac=');
@@ -41,7 +41,7 @@ display: flex;
 justify-content: left;
 padding: 20px 0px;
 margin-bottom: 20px;
-margin-left: 245px;
+margin-left: 230px;
 }
 
 #start{
