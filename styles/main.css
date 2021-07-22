@@ -4,15 +4,22 @@
   box-sizing: border-box;
 } */
 
+/* header {
+  display: flex;
+} */
+
 h1 {
   font-family: 'Nothing You Could Do', cursive;
   text-align: center;
   font-size:60px;
-  margin: 60px 0px 30px 0px;
+  margin: 30px 0px 0px 0px;
   padding: 30px;
-  background-color: lightpink;
+  /* background-image: url('https://media.istockphoto.com/vectors/colorful-watercolor-splashes-vector-id1144872767?k=6&m=1144872767&s=612x612&w=0&h=yaqnDfbl0NZ9AUnhHQCa5XWkn0JfHqmi4Ve_WSKuFac=');
+  background-size: contain;
+  background-repeat: no-repeat; */
 
 }
+
 .controls-wrapper{
 display: flex;
 justify-content: center;
@@ -46,6 +53,8 @@ margin-bottom: 20px;
   justify-content: center;
   height: 600px;
   width: 600px;
+  position: relative;
+  z-index: -1;
 }
 
 .grid-one div {
@@ -55,23 +64,33 @@ margin-bottom: 20px;
 }
 
 .grid-two {
-  background-color: pink;
   align-items: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   flex-wrap: wrap;
-  /* height: 100%; */
   justify-content: center;
   height: 600px;
   width: 600px;
 }
-
-.grid-two div {
-  /* border: 1px solid lightgrey; */
-  height: 16%;
-  width: 16%;
-  border: 1px greenyellow solid;
+.easel {
+  display: flex;
+  flex-direction: column;
 }
+.easel-top {
+  height: 200px;
+  width: 200px
+}
+.easel-bottom {
+  height: 200px;
+  width: 200px
+}
+
+/* .grid-two div {
+  /* border: 1px solid lightgrey; */
+  /* height: 16%; */
+  /* width: 16%; */
+  /* border: 1px greenyellow solid;
+} */ 
 
 .grid-one div.artist {
   background-image: url('https://www.emoji.com/wp-content/uploads/filebase/icons/emoji-icons-glossy-roles-woman-artist-72dpi-forPersonalUseOnly.png');
@@ -80,26 +99,177 @@ margin-bottom: 20px;
   cursor: pointer;
 }
 
-.grid-one div.pink {
-  background-color: lightpink;
+.grid-one div.pinkPaintBrushFront{
+  background-image: url(../assets/pink\ paintbrush\ front\ .png);
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
 }
 
-.grid-one div.blue {
-  background-color: blue;
+.grid-one div.pinkPaintBrushFront::before {
+  background-image: url('https://thumbs.dreamstime.com/b/watercolor-stain-pink-splashes-stains-isolated-scarlet-spot-white-background-bright-crimson-blot-drawn-hand-153001869.jpg');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: -1;
 }
 
-.grid-one div.green {
-  background-color: palegreen;
+.grid-one div.pinkPaintBrushMiddleOne{
+  background-image: url(../assets/pink\ paintbrush\ middle\ 1\ copy.png);
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
 }
 
-.grid-one div.lilac {
-  background-color: #c0a7fc;
+.grid-one div.pinkPaintBrushMiddleOne::before {
+  background-image: url('https://thumbs.dreamstime.com/b/watercolor-stain-pink-splashes-stains-isolated-scarlet-spot-white-background-bright-crimson-blot-drawn-hand-153001869.jpg');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.grid-one div.pinkPaintBrushMiddleTwo {
+  background-image: url(../assets/pink\ paintbrush\ middle\ 2\ copy.png);
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.grid-one div.pinkPaintBrushMiddleTwo::before {
+  background-image: url('https://thumbs.dreamstime.com/b/watercolor-stain-pink-splashes-stains-isolated-scarlet-spot-white-background-bright-crimson-blot-drawn-hand-153001869.jpg');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.grid-one div.pinkPaintBrushEnd {
+  background-image: url('https://thumbs.dreamstime.com/b/watercolor-stain-pink-splashes-stains-isolated-scarlet-spot-white-background-bright-crimson-blot-drawn-hand-153001869.jpg');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+
+.grid-one div.pinkPaintBrushEnd::before {
+  background-image: url(../assets/pink\ paintbrush\ end.png);
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.grid-one div.bluePaintBrushFront {
+  background-image: url('file:///Users/jessicastrawford/Desktop/blue%20paintbrush%20front.png');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+.grid-one div.bluePaintBrushMiddle {
+  background-image: url('file:///Users/jessicastrawford/Desktop/blue%20paintbrush%20middle.png');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+.grid-one div.bluePaintBrushEnd {
+  background-image: url('file:///Users/jessicastrawford/Desktop/blue%20paintbrush%20end.png');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.grid-one div.greenPaintBrushFront {
+  background-image: url('file:///Users/jessicastrawford/Desktop/green%20paintbrush%20front%20.png');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+.grid-one div.greenPaintBrushMiddle {
+  background-image: url('file:///Users/jessicastrawford/Desktop/green%20paintbrush%20middle.png');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+.grid-one div.greenPaintBrushEnd {
+  background-image: url('file:///Users/jessicastrawford/Desktop/green%20paintbrush%20end.png');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.grid-one div.lilacPaintBrushFront {
+  background-image: url('file:///Users/jessicastrawford/Desktop/lilac%20paintbrush%20front.png');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.grid-one div.lilacPaintBrushMiddle {
+  background-image: url('file:///Users/jessicastrawford/Desktop/lilac%20paintbrush%20middle.png');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.grid-one div.lilacPaintBrushEnd {
+  background-image: url('file:///Users/jessicastrawford/Desktop/lilac%20paintbrush%20end%20.png');
+  height: 54px;
+  width: 54px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
 }
 
 .grid-one div.canvas{
-  background-image: url('https://static.abcteach.com/free_preview/p/palettebnw_p.png');
+  background-image: url('https://st.depositphotos.com/1732591/3432/v/600/depositphotos_34326405-stock-illustration-canvas-on-an-easel.jpg');
   height: 54px;
-  width: 54px; 
+  width: 40px; 
   background-size: contain;
   background-position: center;
 }
@@ -127,6 +297,8 @@ margin-bottom: 20px;
   width: 54px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 0;
 
 }
 
@@ -170,7 +342,47 @@ margin-bottom: 20px;
   background-position: center;
 }
 
-.grid-two div.lilac-splashTopLeft{
+.grid-two.orange{
+  background-image: url(../assets/orange\ full\ \ copy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.grid-two.turq-top{
+  background-image: url(../assets/turq\ full\ \ copy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  }
+
+.turq-top::before{
+  content: '';
+  background-image: url(../assets/blue\ full\ \ copy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: contain;
+  }
+
+.grid-two.blue-top{
+  background-image: url(../assets/blue\ full\ \ copy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+    }
+
+.grid-two.blue-top::before{
+  content: '';
+  background-image: url(../assets/turq\ full\ \ copy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: contain;
+    }
+
+
+
+
+/* 
+.grid-two div.lilac-splashOne{
   background-image: url('file:///Users/jessicastrawford/Downloads/LILAC%20TOP%20LEFT.png');
   height: 96px;
   width: 96px; 
@@ -178,7 +390,7 @@ margin-bottom: 20px;
   background-position: center;
 }
 
-.grid-two div.lilac-splashTopRight{
+.grid-two div.lilac-splashTwo{
   background-image: url('file:///Users/jessicastrawford/Downloads/LILAC%20TOP%20RIGHT.png');
   height: 96px;
   width: 96px; 
@@ -186,7 +398,7 @@ margin-bottom: 20px;
   background-position: center;
 }
 
-.grid-two div.lilac-splashBottomLeft{
+.grid-two div.lilac-splashThree{
   background-image: url('file:///Users/jessicastrawford/Downloads/LILAC%20BOTTOM%20LEFT.png');
   height: 96px;
   width: 96px; 
@@ -194,7 +406,7 @@ margin-bottom: 20px;
   background-position: center;
 }
 
-.grid-two div.lilac-splashBottomRight{
+.grid-two div.lilac-splashFour{
   background-image: url('file:///Users/jessicastrawford/Downloads/LILAC%20BOTTOM%20RIGHT.png');
   height: 96px;
   width: 96px; 
@@ -203,7 +415,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashOne{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%20middle%20top%20left%201.png');
+  background-image: url(../assets/green\ 1.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -211,7 +423,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashTwo{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%20top%20left%202png.png');
+  background-image: url(../assets/green\ 2.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -219,7 +431,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashThree{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%20top%20left%203.png');
+  background-image: url(../assets/green\ 3.png);
   height: 96px;
   width: 96px; 
   background-size: cover;top 
@@ -227,7 +439,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashFour{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%204.png');
+  background-image: url(../assets/green\ 4.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -235,7 +447,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashFive{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%205.png');
+  background-image: url(../assets/green\ 5.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -243,7 +455,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashSix{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%206.png');
+  background-image: url(../assets/green\ 6.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -251,7 +463,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashSeven{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%207.png');
+  background-image: url(../assets/green\ 7.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -259,7 +471,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashEight{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%208.png');
+  background-image: url(../assets/green\ 8.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -267,7 +479,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashNine{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%209.png');
+  background-image: url(../assets/green\ 9.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -275,7 +487,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashTen{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%2010.png');
+  background-image: url(../assets/green\ 10.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -283,7 +495,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashEleven{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%2011.png');
+  background-image: url(../assets/green\ 11.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -291,7 +503,7 @@ margin-bottom: 20px;
 }
 
 .grid-two div.green-splashTwelve{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/turq%2012.png');
+  background-image: url(../assets/green\ 12.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -299,130 +511,175 @@ margin-bottom: 20px;
 }
 
 .grid-two div.blue-splashOne{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/blue%201.png');
+  background-image: url(../assets/blue\ 1.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 2;
 }
-.grid-two div.blue-splashTwo{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/blue%202.png');
+
+.grid-two div.blue-splashOne::before {
+  content: ''; 
+  background-image: url(../assets/blue\ 1.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+
+.grid-two div.blue-splashTwo{
+  background-image: url(../assets/blue\ 2.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 2;
 }
 .grid-two div.blue-splashThree{ 
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/blue%203.png');
+  background-image: url(../assets/blue\ 3.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 2;
 }
 
 .grid-two div.blue-splashFour{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/blue%204%20png');
+  background-image: url(../assets/blue\ 4\ png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 2;
 }
 
 .grid-two div.blue-splashFive{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General Assembly/SPLASHES/blue 5.png');
+  background-image: url(../assets/blue\ 5.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 2;
 }
 .grid-two div.blue-splashSix{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/blue%206.png');
+  background-image: url(../assets/blue\ 6.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 2;
 }
 .grid-two div.blue-splashSeven{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/blue%207.png');
+  background-image: url(../assets/blue\ 7.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 2;
 }
 
 .grid-two div.blue-splashEight{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/blue%208.png');
+  background-image: url(../assets/blue\ 8.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 2;
 }
 
 .grid-two div.lightPink-splashOne{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%201.png');
+  background-image: url(../assets/lightpink\ 1.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 1;
 }
 .grid-two div.lightPink-splashTwo{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%202.png');
+  background-image: url(../assets/lightpink\ 2.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 1;
 }
 .grid-two div.lightPink-splashThree{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%203.png');
+  background-image: url(../assets/lightpink\ 3.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 1;
 }
 .grid-two div.lightPink-splashFour{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%204.png');
+  background-image: url(../assets/lightpink\ 4.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 1;
 }
 .grid-two div.lightPink-splashFive{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%205.png');
+  background-image: url(../assets/lightpink\ 5.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 1;
 }
 .grid-two div.lightPink-splashSix{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%206.png');
+  background-image: url(../assets/lightpink\ 6.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 1;
 }
 .grid-two div.lightPink-splashSeven{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%207.png');
+  background-image: url(../assets/lightpink\ 7.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 1;
 }
 .grid-two div.lightPink-splashEight{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%208.png');
+  background-image: url(../assets/lightpink\ 8.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 1;
 }
 .grid-two div.lightPink-splashNine{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%209.png');
+  background-image: url(../assets/lightpink\ 9.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 1;
 }
 .grid-two div.turq-splashOne{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%209.png');
+  background-image: url(../assets/turq\ 1\ \ png.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
@@ -430,47 +687,241 @@ margin-bottom: 20px;
 }
 
 .grid-two div.turq-splashTwo{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%209.png');
+  background-image: url(../assets/turq\ 2\ .png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
 }
 .grid-two div.turq-splashThree{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%209.png');
+  background-image: url(../assets/turq\ 3\ .png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
 }
 .grid-two div.turq-splashFour{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%209.png');
+  background-image: url(../assets/turq\ 4\ copy.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
 }
 .grid-two div.turq-splashFive{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%209.png');
+  background-image: url(../assets/turq\ 5\ .png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
 }
 .grid-two div.turq-splashSix{
-  background-image: url('file:///Users/jessicastrawford/Desktop/General%20Assembly/SPLASHES/lightpink%209.png');
+  background-image: url(../assets/turq\ 6\ copy.png);
   height: 96px;
   width: 96px; 
   background-size: cover;
   background-position: center;
 }
 
-/* #start{
-  border: none;
-  background-image: url('https://i.pinimg.com/originals/d4/50/0b/d4500b058db6706e4b28e2ab24c4e365.png');
-  background-position: center;
+.grid-two div.lilac-splashOne{
+  background-image: url(../assets/lilac\ 1.png);
+  height: 96px;
+  width: 96px; 
   background-size: cover;
-  height: 100px;
-  width: 100px;
+  background-position: center;
+}
 
-} */
+
+.grid-two div.lilac-splashTwo{
+  background-image: url(../assets/lilac\ 2.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+
+
+.grid-two div.lilac-splashThree{
+  background-image: url(../assets/lilac\ 3.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+
+
+.grid-two div.lilac-splashFour{
+  background-image: url(../assets/lilac\ 4.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-two div.pink-splashOne{
+  background-image: url(../assets/pink\ 1.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-two div.pink-splashTwo{
+  background-image: url(../assets/pink\ 2.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.pink-splashThree{
+  background-image: url(../assets/pink\ 3.png));
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.pink-splashFour{
+  background-image: url(../assets/pink\ 4.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.pink-splashFive{
+  background-image: url(../assets/pink\ 5\ .png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.pink-splashSix{
+  background-image: url(../assets/pink\ 6.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.pink-splashSeven{
+  background-image: url(../assets/pink\ 7.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.pink-splashEight{
+  background-image: url(../assets/pink\ 8.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.pink-splashNine{
+  background-image: url(../assets/pink\ 9.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.purple-splashOne{
+  background-image: url(../assets/purple\ 1.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.purple-splashTwo{
+  background-image: url(../assets/purple\ 2.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.purple-splashThree{
+  background-image: url(../assets/purple\ 3.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.purple-splashFour{
+  background-image: url(../assets/purple\ 4\ .png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.purple-splashFive{
+  background-image: url(../assets/purple\ 5.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.orange-splashOne{
+  background-image: url(../assets/orange\ 1.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.orange-splashTwo{
+  background-image: url(../assets/orange\ 2.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.orange-splashThree{
+  background-image: url(../assets/orange\ 3.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.orange-splashFour{
+  background-image: url(../assets/orange\ 4\ .png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.orange-splashFive{
+  background-image: url(../assets/orange\ 5.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+.grid-two div.orange-splashSix{
+  background-image: url(../assets/orange\ 6.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-two div.lightPinkOverTurq-one{
+  background-image: url(../assets/light\ pink\ over\ turq\ 1\ .png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-two div.lightPinkOverTurq-two{
+  background-image: url(../assets/light\ pink\ over\ turq\ 2.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-two div.lightPinkOverTurq-three{
+  background-image: url(../assets/light\ pink\ over\ turq\ 3.png);
+  height: 96px;
+  width: 96px; 
+  background-size: cover;
+  background-position: center;
+}
+
+
+ */
