@@ -5,11 +5,10 @@
 const gridOne = document.querySelector('.grid-one')
 const gridTwo = document.querySelector('.grid-two')
 const startBtn = document.querySelector('#start')
-// const lilacPaintBlob = document.querySelector('.lilac-blob')
-// const pinkPaintBlob = document.querySelector('.pink-blob')
-// const bluePaintBlob = document.querySelector('.blue-blob')
-// const greenPaintBlob = document.querySelector('.green-blob')
-// const orangePaintBlob = document.querySelector('.orange-blob')
+const restartBtn = document.querySelector('#restart')
+const leftSide = document.querySelector('.left-side')
+const winningSide = document.querySelector('.winning-left-side')
+const instructions = document.querySelector('.instructions')
 
 // Grid Variables 
 const width = 11
@@ -26,11 +25,6 @@ const artistClass = 'artist'
 let artistPosition = 115
 let isPlaying = false 
 const artistHomePosition = [3,7]
-// const pinkPaintBrushClass = 'pink'
-// const bluePaintBrushClass = 'blue'
-// const greenPaintBrushClass = 'green'
-// const lilacPaintBrushClass = 'lilac'
-
 
 
 // Grid Functions
@@ -75,7 +69,6 @@ gridOne.appendChild(purplePaintBlob)
 const pinkPaintBlob = document.createElement('div')
 cells[39].classList.add('pink-blob')
 cells[97].classList.add('pink-blob')
-cells[12].classList.add('pink-blob')
 gridOne.appendChild(pinkPaintBlob)
 
 const bluePaintBlob = document.createElement('div')
@@ -90,6 +83,7 @@ gridOne.appendChild(greenPaintBlob)
 
 const turqPaintBlob = document.createElement('div')
 cells[117].classList.add('turq-blob')
+cells[12].classList.add('turq-blob')
 gridOne.appendChild(turqPaintBlob)
 
 const orangePaintBlob = document.createElement('div')
@@ -114,9 +108,17 @@ function removeArtist() {
 
 function landedHome() {
   if (artistHomePosition.includes(artistPosition)) {
-    alert('Yay you win! Check out your amazing artwork')
-    window.location.reload()
+    leftSide.classList.add('no-show')
+    winningSide.classList.remove('no-show')
+    restartBtn.addEventListener('click', handleRestart)
+
   } return
+}
+
+function handleRestart(){
+  winningSide.classList.add('no-show')
+  leftSide.classList.remove('no-show')
+  window.location.reload()
 }
 
 // Moving block functions
@@ -131,29 +133,7 @@ function handleStart(){
     }
   }, false)
   
-  // let pinkPaintBrushes = [88,87,86,85]
-  // setInterval(() => {
-  //   cells.forEach(cell => cell.classList.remove('pink'))
-  //   pinkPaintBrushes = pinkPaintBrushes.map(pinkPaintBrush => {
-  //     const newPosition = pinkPaintBrush - 1
-  //     cells[newPosition].classList.add('pink')
-  //     return newPosition
-  //   })
-  //   // console.log(pinkPaintBrushes)
-  //   if (cells[77].classList.contains('pink')){
-  //     pinkPaintBrushes = [88,87,86,85]
-  //   } 
-    // if (cells[84].classList.contains('lightPink-blob' && 'pink')){
-    //   cells[84].style.display = 'transparent'
-    
-    // } else if (!cells[84].classList.contains('lightPink-blob' && 'pink')){
-    //   cells[84].classList.add('lightPink-blob')
-    // } 
-    // } else if ((cells[artistPosition].classList.contains('lightPink-blob'))){
-    //   cells[67].classList.remove('lightPink-blob')
-    //   cells[84].classList.remove('lightPink-blob')
-    // } return
-  // }, 500)
+  instructions.classList.add('no-show')
 
   let pinkPaintBrushesFront = [85]
   setInterval(() => {
@@ -170,6 +150,10 @@ function handleStart(){
       alert('Game Over')
       window.location.reload()
     }
+    if (cells[84].classList.contains('lightPink-blob' && 'pinkPaintBrushFront')){
+      cells[84].classList.remove('lightPink-blob')
+    }
+
   }, 500)
 
   let pinkPaintBrushesMiddleOne = [86]
@@ -209,35 +193,11 @@ function handleStart(){
     if (cells[77].classList.contains('pinkPaintBrushFront')){
       pinkPaintBrushesEnd = [88]
     }
+    if (cells[83].classList.contains('pinkPaintBrushEnd') && !cells[84].classList.contains('eaten-blob')) {
+      cells[84].classList.add('lightPink-blob')
+    }
   }, 500)
 
-
-
-  // let bluePaintBrushes = [56,55,54]
-  // setInterval(() => {
-  //   cells.forEach(cell => cell.classList.remove('blue'))
-  //   bluePaintBrushes = bluePaintBrushes.map(bluePaintBrush => {
-  //     const newPosition = bluePaintBrush + 1
-  //     cells[newPosition].classList.add('blue')
-  //     return newPosition
-  //   })
-
-  //   if (cells[65].classList.contains('blue')){
-  //     bluePaintBrushes = [54,55,56]
-  //   } 
-    // if (cells[59].classList.contains('blue-blob' && 'blue')){
-    //   cells[59].classList.remove('blue-blob')
-    // }
-    // if (!cells[59].classList.contains('blue-blob' && 'blue')){
-    //   cells[59].classList.add('blue-blob')
-    // }
-    // if (cells[63].classList.contains('lilac-blob' && 'blue')){
-    //   cells[63].classList.remove('lilac-blob')
-    // }
-    // if (!cells[63].classList.contains('lilac-blob' && 'blue')){
-    //   cells[63].classList.add('lilac-blob')
-    // }
-  // }, 400)
   
   let bluePaintBrushesFront = [56] 
   setInterval(() => {
@@ -254,6 +214,12 @@ function handleStart(){
     if (cells[bluePaintBrushesFront] === cells[artistPosition]) {
       alert('Game Over')
       window.location.reload()
+    }
+    if (cells[59].classList.contains('blue-blob' && 'bluePaintBrushFront')){
+      cells[59].classList.remove('blue-blob')
+    }
+    if (cells[63].classList.contains('lilac-blob' && 'bluePaintBrushFront')){
+      cells[63].classList.remove('lilac-blob')
     }
   },400)
 
@@ -283,34 +249,15 @@ function handleStart(){
     if (cells[65].classList.contains('bluePaintBrushFront')){
       bluePaintBrushesEnd = [54]
     } 
+    if (cells[60].classList.contains('bluePaintBrushEnd') && !cells[59].classList.contains('eaten-blob')) {
+      cells[59].classList.add('blue-blob')
+    }
+    if (cells[55].classList.contains('bluePaintBrushEnd') && !cells[63].classList.contains('eaten-blob')) {
+      cells[63].classList.add('lilac-blob')
+    }
+    
   },400)
 
-
-  // let greenPaintBrushes = [44,43,42]
-  // setInterval(() => {
-  //   cells.forEach(cell => cell.classList.remove('green'))
-  //   greenPaintBrushes = greenPaintBrushes.map(greenPaintBrush => {
-  //     const newPosition = greenPaintBrush - 1
-  //     cells[newPosition].classList.add('green')
-  //     return newPosition
-  //   })
-    
-  //   if (cells[33].classList.contains('green')){
-  //     greenPaintBrushes = [44,43,42]
-  //   } 
-    // if (cells[35].classList.contains('green-blob' && 'green')){
-    //   cells[35].classList.remove('green-blob')
-    // }
-    // if (!cells[35].classList.contains('green-blob' && 'green')){
-    //   cells[35].classList.add('green-blob')
-    // }
-    // if (cells[39].classList.contains('pink-blob' && 'green')){
-    //   cells[39].classList.remove('pink-blob')
-    // }
-    // if (!cells[39].classList.contains('pink-blob' && 'green')){
-    //   cells[39].classList.add('pink-blob')
-    // }
-  // }, 350)
 
   let greenPaintBrushesFront = [42]
   setInterval(() => {
@@ -328,6 +275,12 @@ function handleStart(){
       alert('Game Over')
       window.location.reload()
     }
+    if (cells[39].classList.contains('pink-blob' && 'greenPaintBrushFront')){
+      cells[39].classList.remove('pink-blob')
+    }
+    if (cells[35].classList.contains('green-blob' && 'greenPaintBrushFront')){
+      cells[35].classList.remove('green-blob')
+    }
   }, 350)
 
   let greenPaintBrushesMiddle = [43]
@@ -344,7 +297,7 @@ function handleStart(){
     } 
   }, 350)
 
- let greenPaintBrushesEnd = [44]
+  let greenPaintBrushesEnd = [44]
   setInterval(() => {
     cells.forEach(cell => cell.classList.remove('greenPaintBrushEnd'))
     greenPaintBrushesEnd = greenPaintBrushesEnd.map(greenPaintBrushEnd => {
@@ -356,39 +309,16 @@ function handleStart(){
     if (cells[33].classList.contains('greenPaintBrushFront')){
       greenPaintBrushesEnd = [44]
     } 
+    if (cells[38].classList.contains('greenPaintBrushEnd') && !cells[39].classList.contains('eaten-blob')) {
+      cells[39].classList.add('pink-blob')
+    }
+    if (cells[43].classList.contains('greenPaintBrushEnd') && !cells[35].classList.contains('eaten-blob')) {
+      cells[35].classList.add('green-blob')
+    }
+
   }, 350)
 
-  // let lilacPaintBrushes = [10,11,12]
-  // setInterval(() => {
-  //   cells.forEach(cell => cell.classList.remove('lilac'))
-  //   lilacPaintBrushes = lilacPaintBrushes.map(lilacPaintBrush => {
-  //     const newPosition = lilacPaintBrush + 1
-  //     cells[newPosition].classList.add('lilac')
-  //     return newPosition
-  //   })
-    
-  //   if (cells[21].classList.contains('lilac')){
-  //     lilacPaintBrushes = [10,11,12]
-  //   } 
-    // if (cells[21].classList.contains('green-blob' && 'lilac')){
-    //   cells[21].classList.remove('green-blob')
-    // }
-    // if (!cells[21].classList.contains('green-blob' && 'lilac')){
-    //   cells[21].classList.add('green-blob')
-    // }
-    // if (cells[12].classList.contains('pink-blob' && 'lilac')){
-    //   cells[12].classList.remove('pink-blob')
-    // }
-    // if (!cells[12].classList.contains('pink-blob' && 'lilac')){
-    //   cells[12].classList.add('pink-blob')
-    // }
-    // if (cells[16].classList.contains('orange-blob' && 'lilac')){
-    //   cells[16].classList.remove('orange-blob')
-    // }
-    // if (!cells[16].classList.contains('orange-blob' && 'lilac')){
-    //   cells[16].classList.add('orange-blob')
-    // }
-  // }, 300)
+
 
   let lilacPaintBrushesFront = [12]
   setInterval(() => {
@@ -406,6 +336,14 @@ function handleStart(){
       alert('Game Over')
       window.location.reload()
     }
+
+    if (cells[16].classList.contains('orange-blob' && 'lilacPaintBrushFront')){
+      cells[16].classList.remove('orange-blob')
+    }
+    if (cells[21].classList.contains('green-blob' && 'lilacPaintBrushFront')){
+      cells[21].classList.remove('green-blob')
+    }
+
   }, 300)
 
   let lilacPaintBrushesMiddle = [11]
@@ -420,6 +358,9 @@ function handleStart(){
     if (cells[21].classList.contains('lilacPaintBrushFront')){
       lilacPaintBrushesMiddle = [11]
     } 
+    if (cells[12].classList.contains('turq-blob' && 'lilacPaintBrushMiddle')){
+      cells[12].classList.remove('turq-blob')
+    }
   }, 300)
 
   let lilacPaintBrushesEnd = [10]
@@ -434,6 +375,17 @@ function handleStart(){
     if (cells[21].classList.contains('lilacPaintBrushFront')){
       lilacPaintBrushesEnd = [10]
     } 
+
+    if (cells[13].classList.contains('lilacPaintBrushEnd') && !cells[12].classList.contains('eaten-blob')) {
+      cells[12].classList.add('turq-blob')
+    }
+    if (cells[17].classList.contains('lilacPaintBrushEnd') && !cells[16].classList.contains('eaten-blob')) {
+      cells[16].classList.add('orange-blob')
+    }
+    if (cells[13].classList.contains('lilacPaintBrushFront') && !cells[21].classList.contains('eaten-blob')) {
+      cells[21].classList.add('green-blob')
+    }
+
   }, 300)
 
   console.log('start')
@@ -469,18 +421,14 @@ function handleStart(){
 
     landedHome()
     collision()
-    // eatingPurplePaintBlob()
-    // eatingGreenPaintBlob()
-    // eatingBluePaintBlob()
-    // eatingLightPinkPaintBlob()
-    // eatingTurqPaintBlob()
-    // eatingPinkPaintBlob()
-    // eatingOrangePaintBlob()
-    // eatingLilacPaintBlob()
-    eatingBlueBlob()
+    eatingLightPinkBlob()
+    eatingPinkBlob()
     eatingOrangeBlob()
+    eatingBlueBlob()
+    eatingLilacBlob()
+    eatingPurpleBlob()
+    eatingGreenBlob()
     eatingTurqBlob()
-
   }
 
   document.addEventListener('keyup', handleKeyUp)
@@ -495,33 +443,114 @@ function collision() {
 
 } 
 
-// function collisionTwo() {
-//   if (cells.classList.contains(artistClass) && cells.classList.contains('blue')) {
-//     alert('Game Over')
-//     window.location.reload()
-//   } return
-// }
 
+function eatingLightPinkBlob() {
+  if ((cells[artistPosition].classList.contains('lightPink-blob'))) {
+    cells[67].classList.remove('lightPink-blob')
+    cells[84].classList.remove('lightPink-blob')
+    cells[84].classList.add('eaten-blob')
+    cells[67].classList.add('eaten-blob')
+    const lightPinkSplash = document.createElement('div')
+    gridTwo.appendChild(lightPinkSplash)
+    lightPinkSplash.classList.add('lightPink')
+  }
+}
+function eatingPinkBlob() {
+  if ((cells[artistPosition].classList.contains('pink-blob'))) {
+    cells[97].classList.remove('pink-blob')
+    cells[39].classList.remove('pink-blob')
+    cells[97].classList.add('eaten-blob')
+    cells[39].classList.add('eaten-blob')
+    const pinkSplash = document.createElement('div')
+    gridTwo.appendChild(pinkSplash)
+    pinkSplash.classList.add('pink')
+  }
+}
 function eatingOrangeBlob() {
   if ((cells[artistPosition].classList.contains('orange-blob'))) {
-    gridTwo.classList.add('orange')
     cells[92].classList.remove('orange-blob')
     cells[16].classList.remove('orange-blob')
+    cells[92].classList.add('eaten-blob')
+    cells[16].classList.add('eaten-blob')
+    const orangeSplash = document.createElement('div')
+    gridTwo.appendChild(orangeSplash)
+    orangeSplash.classList.add('orange')
+  }
+}
+function eatingBlueBlob() {
+  if ((cells[artistPosition].classList.contains('blue-blob'))) {
+    cells[54].classList.remove('blue-blob')
+    cells[59].classList.remove('blue-blob')
+    cells[54].classList.add('eaten-blob')
+    cells[59].classList.add('eaten-blob')
+    const blueSplash = document.createElement('div')
+    gridTwo.appendChild(blueSplash)
+    blueSplash.classList.add('blue')
+  }
+}
+function eatingLilacBlob() {
+  if ((cells[artistPosition].classList.contains('lilac-blob'))) {
+    cells[63].classList.remove('lilac-blob')
+    cells[63].classList.add('eaten-blob')
+    const lilacSplash = document.createElement('div')
+    gridTwo.appendChild(lilacSplash)
+    lilacSplash.classList.add('lilac')
+  }
+}
+function eatingPurpleBlob() {
+  if ((cells[artistPosition].classList.contains('purple-blob'))) {
+    cells[100].classList.remove('purple-blob')
+    cells[100].classList.add('eaten-blob')
+    const purpleSplash = document.createElement('div')
+    gridTwo.appendChild(purpleSplash)
+    purpleSplash.classList.add('purple')
+  }
+}
+function eatingGreenBlob() {
+  if ((cells[artistPosition].classList.contains('green-blob'))) {
+    cells[21].classList.remove('green-blob')
+    cells[35].classList.remove('green-blob')
+    cells[21].classList.add('eaten-blob')
+    cells[35].classList.add('eaten-blob')
+    const greenSplash = document.createElement('div')
+    gridTwo.appendChild(greenSplash)
+    greenSplash.classList.add('green')
+  }
+}
+function eatingTurqBlob() {
+  if ((cells[artistPosition].classList.contains('turq-blob'))) {
+    cells[117].classList.remove('turq-blob')
+    cells[12].classList.remove('turq-blob')
+    cells[117].classList.add('eaten-blob')
+    cells[12].classList.add('eaten-blob')
+    const turqSplash = document.createElement('div')
+    gridTwo.appendChild(turqSplash)
+    turqSplash.classList.add('turq')
   }
 }
 
-function eatingBlueBlob() {
-  if ((cells[artistPosition].classList.contains('blue-blob'))) {
-    gridTwo.classList.add('blue-top')
-  } return
+startBtn.addEventListener('click', handleStart)
 
-}
+// function eatingOrangeBlob() {
+//   if ((cells[artistPosition].classList.contains('orange-blob'))) {
+//     gridTwo.classList.add('orange')
+//     cells[92].classList.remove('orange-blob')
+//     cells[16].classList.remove('orange-blob')
+//   }
+// }
 
-function eatingTurqBlob() {
-  if ((cells[artistPosition].classList.contains('turq-blob'))) {
-    gridTwo.classList.add('turq-top')
-  } return
-}
+// function eatingBlueBlob() {
+//   if ((cells[artistPosition].classList.contains('blue-blob'))) {
+//     gridTwo.classList.add('blue-top')
+//   } return
+
+// }
+
+// function eatingTurqBlob() {
+//   if ((cells[artistPosition].classList.contains('turq-blob'))) {
+//     gridTwo.classList.add('turq-top')
+//   } return
+// }
 // function eatingPurplePaintBlob() {
 //   if ((cells[artistPosition].classList.contains('purple-blob'))) {
 //     cellsTwo[8].classList.add('purple-splashOne')
@@ -639,8 +668,6 @@ function eatingTurqBlob() {
 
 // Events
 
-startBtn.addEventListener('click', handleStart)
-
 // Adding paint blobs to playing board
 
 // const canvas = document.createElement('div')
@@ -688,3 +715,112 @@ startBtn.addEventListener('click', handleStart)
 
 // Paint splash on canvas
 
+  // let bluePaintBrushes = [56,55,54]
+  // setInterval(() => {
+  //   cells.forEach(cell => cell.classList.remove('blue'))
+  //   bluePaintBrushes = bluePaintBrushes.map(bluePaintBrush => {
+  //     const newPosition = bluePaintBrush + 1
+  //     cells[newPosition].classList.add('blue')
+  //     return newPosition
+  //   })
+
+  //   if (cells[65].classList.contains('blue')){
+  //     bluePaintBrushes = [54,55,56]
+  //   } 
+    // if (cells[59].classList.contains('blue-blob' && 'blue')){
+    //   cells[59].classList.remove('blue-blob')
+    // }
+    // if (!cells[59].classList.contains('blue-blob' && 'blue')){
+    //   cells[59].classList.add('blue-blob')
+    // }
+    // if (cells[63].classList.contains('lilac-blob' && 'blue')){
+    //   cells[63].classList.remove('lilac-blob')
+    // }
+    // if (!cells[63].classList.contains('lilac-blob' && 'blue')){
+    //   cells[63].classList.add('lilac-blob')
+    // }
+  // }, 400)
+
+
+    // let lilacPaintBrushes = [10,11,12]
+  // setInterval(() => {
+  //   cells.forEach(cell => cell.classList.remove('lilac'))
+  //   lilacPaintBrushes = lilacPaintBrushes.map(lilacPaintBrush => {
+  //     const newPosition = lilacPaintBrush + 1
+  //     cells[newPosition].classList.add('lilac')
+  //     return newPosition
+  //   })
+    
+  //   if (cells[21].classList.contains('lilac')){
+  //     lilacPaintBrushes = [10,11,12]
+  //   } 
+    // if (cells[21].classList.contains('green-blob' && 'lilac')){
+    //   cells[21].classList.remove('green-blob')
+    // }
+    // if (!cells[21].classList.contains('green-blob' && 'lilac')){
+    //   cells[21].classList.add('green-blob')
+    // }
+    // if (cells[12].classList.contains('pink-blob' && 'lilac')){
+    //   cells[12].classList.remove('pink-blob')
+    // }
+    // if (!cells[12].classList.contains('pink-blob' && 'lilac')){
+    //   cells[12].classList.add('pink-blob')
+    // }
+    // if (cells[16].classList.contains('orange-blob' && 'lilac')){
+    //   cells[16].classList.remove('orange-blob')
+    // }
+    // if (!cells[16].classList.contains('orange-blob' && 'lilac')){
+    //   cells[16].classList.add('orange-blob')
+    // }
+  // }, 300)
+
+
+  // let greenPaintBrushes = [44,43,42]
+  // setInterval(() => {
+  //   cells.forEach(cell => cell.classList.remove('green'))
+  //   greenPaintBrushes = greenPaintBrushes.map(greenPaintBrush => {
+  //     const newPosition = greenPaintBrush - 1
+  //     cells[newPosition].classList.add('green')
+  //     return newPosition
+  //   })
+    
+  //   if (cells[33].classList.contains('green')){
+  //     greenPaintBrushes = [44,43,42]
+  //   } 
+    // if (cells[35].classList.contains('green-blob' && 'green')){
+    //   cells[35].classList.remove('green-blob')
+    // }
+    // if (!cells[35].classList.contains('green-blob' && 'green')){
+    //   cells[35].classList.add('green-blob')
+    // }
+    // if (cells[39].classList.contains('pink-blob' && 'green')){
+    //   cells[39].classList.remove('pink-blob')
+    // }
+    // if (!cells[39].classList.contains('pink-blob' && 'green')){
+    //   cells[39].classList.add('pink-blob')
+    // }
+  // }, 350)
+
+  // let pinkPaintBrushes = [88,87,86,85]
+  // setInterval(() => {
+  //   cells.forEach(cell => cell.classList.remove('pink'))
+  //   pinkPaintBrushes = pinkPaintBrushes.map(pinkPaintBrush => {
+  //     const newPosition = pinkPaintBrush - 1
+  //     cells[newPosition].classList.add('pink')
+  //     return newPosition
+  //   })
+  //   // console.log(pinkPaintBrushes)
+  //   if (cells[77].classList.contains('pink')){
+  //     pinkPaintBrushes = [88,87,86,85]
+  //   } 
+    // if (cells[84].classList.contains('lightPink-blob' && 'pink')){
+    //   cells[84].style.display = 'transparent'
+    
+    // } else if (!cells[84].classList.contains('lightPink-blob' && 'pink')){
+    //   cells[84].classList.add('lightPink-blob')
+    // } 
+    // } else if ((cells[artistPosition].classList.contains('lightPink-blob'))){
+    //   cells[67].classList.remove('lightPink-blob')
+    //   cells[84].classList.remove('lightPink-blob')
+    // } return
+  // }, 500)
