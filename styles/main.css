@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
 
-/* * {
-  box-sizing: border-box;
-} */
 
-/* header {
-  display: flex;
-} */
 body {
   background-image: url(../assets/background.png);
   background-position: center;
@@ -18,17 +12,14 @@ h1 {
   text-align: center;
   font-size:60px;
   margin: 50px 0px 0px 110px;
-  /* padding: 30px; */
   width: 500px;
-  /* background-image: url('https://media.istockphoto.com/vectors/colorful-watercolor-splashes-vector-id1144872767?k=6&m=1144872767&s=612x612&w=0&h=yaqnDfbl0NZ9AUnhHQCa5XWkn0JfHqmi4Ve_WSKuFac=');
-  background-size: contain;
-  background-repeat: no-repeat; */
 
 }
 main{
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  position:relative;
+  z-index: 1;
 }
 
 
@@ -69,7 +60,6 @@ margin-left: 230px;
   height: 600px;
   width:500px;
   margin-left: 60px;
- 
 }
 
 .info{
@@ -83,19 +73,14 @@ margin-left: 230px;
 h3{
   text-align: center;
   font-family: 'Nothing You Could Do', cursive;
-  /* width: 300px;
-  margin-top: 100px; */
+
 }
 
 
 li{
   text-align: center;
   font-family: 'Nothing You Could Do', cursive;
-  /* list-style-type:circle; */
-  /* padding: 5px; */
-  /* width: 250px;
-  margin-top: 40px;
-  margin-left:40px; */
+
 }
 
 h2{
@@ -103,6 +88,10 @@ h2{
   text-align: center;
   width: 400px;
   margin-top: 500px;
+}
+
+.winning-left-side{
+  margin-left: 100px;
 }
 
 #start:hover{
@@ -114,6 +103,41 @@ h2{
   box-shadow: 0 0 20px 0 rgb(236, 117, 101);
   transform:scale(1.2,1.2); 
   
+}
+
+p{
+  font-family: 'Nothing You Could Do', cursive;
+  text-align: center;
+  font-size:1.5em;
+}
+
+.alert-lost{
+  z-index: 2;
+  position:absolute;
+  background-image: url(../assets/background.png);
+  box-shadow: 0 0 900px 0 rgba(0, 0, 0, 0.9);
+  text-align: center;
+  height:250px;
+  width:400px;
+  padding: 40px 20px 0 20px;
+  margin-top: -745px;
+}
+
+.lost {
+  display: flex;
+  justify-content: center;
+}
+
+.try-again{
+  border: 1px lightcoral solid;
+  background-color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  font-family: 'Nothing You Could Do', cursive;
+}
+.try-again:hover{
+  box-shadow: 0 0 20px 0 rgb(236, 117, 101);
+  transform:scale(1.2,1.2); 
 }
 
 .grid-wrapper {
@@ -173,6 +197,11 @@ h2{
 }
 .no-show{
   display: none;
+}
+.dark-mode{
+  background:rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 4;
 }
 
 /* .grid-container {
@@ -241,7 +270,7 @@ h2{
 }
 
 .grid-one div.bluePaintBrushFront {
-  background-image: url('file:///Users/jessicastrawford/Desktop/blue%20paintbrush%20front.png');
+  background-image: url(../assets/blue\ paintbrush\ front.png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -250,7 +279,7 @@ h2{
   z-index: 1;
 }
 .grid-one div.bluePaintBrushMiddle {
-  background-image: url('file:///Users/jessicastrawford/Desktop/blue%20paintbrush%20middle.png');
+  background-image: url(../assets/blue\ paintbrush\ middle.png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -259,7 +288,7 @@ h2{
   z-index: 1;
 }
 .grid-one div.bluePaintBrushEnd {
-  background-image: url('file:///Users/jessicastrawford/Desktop/blue%20paintbrush%20end.png');
+  background-image: url(../assets/blue\ paintbrush\ end.png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -269,7 +298,7 @@ h2{
 }
 
 .grid-one div.greenPaintBrushFront {
-  background-image: url('file:///Users/jessicastrawford/Desktop/green%20paintbrush%20front%20.png');
+  background-image: url(../assets/green\ paintbrush\ front\ .png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -278,7 +307,7 @@ h2{
   z-index: 1;
 }
 .grid-one div.greenPaintBrushMiddle {
-  background-image: url('file:///Users/jessicastrawford/Desktop/green%20paintbrush%20middle.png');
+  background-image: url(../assets/green\ paintbrush\ middle.png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -287,7 +316,7 @@ h2{
   z-index: 1;
 }
 .grid-one div.greenPaintBrushEnd {
-  background-image: url('file:///Users/jessicastrawford/Desktop/green%20paintbrush%20end.png');
+  background-image: url(../assets/green\ paintbrush\ end.png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -297,7 +326,7 @@ h2{
 }
 
 .grid-one div.lilacPaintBrushFront {
-  background-image: url('file:///Users/jessicastrawford/Desktop/lilac%20paintbrush%20front.png');
+  background-image: url(../assets/lilac\ paintbrush\ front.png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -307,7 +336,7 @@ h2{
 }
 
 .grid-one div.lilacPaintBrushMiddle {
-  background-image: url('file:///Users/jessicastrawford/Desktop/lilac%20paintbrush%20middle.png');
+  background-image: url(../assets/lilac\ paintbrush\ middle.png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -317,7 +346,7 @@ h2{
 }
 
 .grid-one div.lilacPaintBrushEnd {
-  background-image: url('file:///Users/jessicastrawford/Desktop/lilac%20paintbrush%20end%20.png');
+  background-image: url(../assets/lilac\ paintbrush\ end\ .png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -336,7 +365,7 @@ h2{
 
 
 .grid-one div.lilac-blob {
-  background-image: url('file:///Users/jessicastrawford/Downloads/lilac%20blob.png');
+  background-image: url(../assets/lilac\ blob.png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -363,7 +392,7 @@ h2{
 }
 
 .grid-one div.pink-blob{
-  background-image: url('file:///Users/jessicastrawford/Downloads/red%20pink%20blob%20.png');
+  background-image: url(../assets/red\ pink\ blob\ .png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -387,7 +416,7 @@ h2{
 }
 
 .grid-one div.turq-blob{
-  background-image: url('file:///Users/jessicastrawford/Downloads/turquosie%20blob.png');
+  background-image: url(../assets/turquosie\ blob.png);
   height: 54px;
   width: 54px; 
   background-size: cover;
@@ -525,566 +554,3 @@ h2{
   width: 250px;
     }
 
-/* .blue{
-  background-image: url(../assets/blue\ full\ \ copy.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 600px;
-  width: 600px;
-}
-.orange{
-  background-image: url(../assets/orange\ full\ \ copy.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 600px;
-  width: 600px;
-} */
-/* .cover{
-  height: 300px;
-  width: 300px;
-} */
-
-/* 
-.grid-two div.lilac-splashOne{
-  background-image: url('file:///Users/jessicastrawford/Downloads/LILAC%20TOP%20LEFT.png');
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.lilac-splashTwo{
-  background-image: url('file:///Users/jessicastrawford/Downloads/LILAC%20TOP%20RIGHT.png');
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.lilac-splashThree{
-  background-image: url('file:///Users/jessicastrawford/Downloads/LILAC%20BOTTOM%20LEFT.png');
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.lilac-splashFour{
-  background-image: url('file:///Users/jessicastrawford/Downloads/LILAC%20BOTTOM%20RIGHT.png');
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashOne{
-  background-image: url(../assets/green\ 1.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashTwo{
-  background-image: url(../assets/green\ 2.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashThree{
-  background-image: url(../assets/green\ 3.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;top 
-  background-position: center;
-}
-
-.grid-two div.green-splashFour{
-  background-image: url(../assets/green\ 4.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashFive{
-  background-image: url(../assets/green\ 5.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashSix{
-  background-image: url(../assets/green\ 6.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashSeven{
-  background-image: url(../assets/green\ 7.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashEight{
-  background-image: url(../assets/green\ 8.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashNine{
-  background-image: url(../assets/green\ 9.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashTen{
-  background-image: url(../assets/green\ 10.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashEleven{
-  background-image: url(../assets/green\ 11.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.green-splashTwelve{
-  background-image: url(../assets/green\ 12.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.blue-splashOne{
-  background-image: url(../assets/blue\ 1.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 2;
-}
-
-.grid-two div.blue-splashOne::before {
-  content: ''; 
-  background-image: url(../assets/blue\ 1.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.grid-two div.blue-splashTwo{
-  background-image: url(../assets/blue\ 2.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 2;
-}
-.grid-two div.blue-splashThree{ 
-  background-image: url(../assets/blue\ 3.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 2;
-}
-
-.grid-two div.blue-splashFour{
-  background-image: url(../assets/blue\ 4\ png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 2;
-}
-
-.grid-two div.blue-splashFive{
-  background-image: url(../assets/blue\ 5.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 2;
-}
-.grid-two div.blue-splashSix{
-  background-image: url(../assets/blue\ 6.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 2;
-}
-.grid-two div.blue-splashSeven{
-  background-image: url(../assets/blue\ 7.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 2;
-}
-
-.grid-two div.blue-splashEight{
-  background-image: url(../assets/blue\ 8.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 2;
-}
-
-.grid-two div.lightPink-splashOne{
-  background-image: url(../assets/lightpink\ 1.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 1;
-}
-.grid-two div.lightPink-splashTwo{
-  background-image: url(../assets/lightpink\ 2.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 1;
-}
-.grid-two div.lightPink-splashThree{
-  background-image: url(../assets/lightpink\ 3.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 1;
-}
-.grid-two div.lightPink-splashFour{
-  background-image: url(../assets/lightpink\ 4.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 1;
-}
-.grid-two div.lightPink-splashFive{
-  background-image: url(../assets/lightpink\ 5.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 1;
-}
-.grid-two div.lightPink-splashSix{
-  background-image: url(../assets/lightpink\ 6.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 1;
-}
-.grid-two div.lightPink-splashSeven{
-  background-image: url(../assets/lightpink\ 7.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 1;
-}
-.grid-two div.lightPink-splashEight{
-  background-image: url(../assets/lightpink\ 8.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 1;
-}
-.grid-two div.lightPink-splashNine{
-  background-image: url(../assets/lightpink\ 9.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 1;
-}
-.grid-two div.turq-splashOne{
-  background-image: url(../assets/turq\ 1\ \ png.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.turq-splashTwo{
-  background-image: url(../assets/turq\ 2\ .png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.turq-splashThree{
-  background-image: url(../assets/turq\ 3\ .png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.turq-splashFour{
-  background-image: url(../assets/turq\ 4\ copy.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.turq-splashFive{
-  background-image: url(../assets/turq\ 5\ .png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.turq-splashSix{
-  background-image: url(../assets/turq\ 6\ copy.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.lilac-splashOne{
-  background-image: url(../assets/lilac\ 1.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-
-.grid-two div.lilac-splashTwo{
-  background-image: url(../assets/lilac\ 2.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-
-.grid-two div.lilac-splashThree{
-  background-image: url(../assets/lilac\ 3.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-
-.grid-two div.lilac-splashFour{
-  background-image: url(../assets/lilac\ 4.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.pink-splashOne{
-  background-image: url(../assets/pink\ 1.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.pink-splashTwo{
-  background-image: url(../assets/pink\ 2.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.pink-splashThree{
-  background-image: url(../assets/pink\ 3.png));
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.pink-splashFour{
-  background-image: url(../assets/pink\ 4.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.pink-splashFive{
-  background-image: url(../assets/pink\ 5\ .png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.pink-splashSix{
-  background-image: url(../assets/pink\ 6.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.pink-splashSeven{
-  background-image: url(../assets/pink\ 7.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.pink-splashEight{
-  background-image: url(../assets/pink\ 8.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.pink-splashNine{
-  background-image: url(../assets/pink\ 9.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.purple-splashOne{
-  background-image: url(../assets/purple\ 1.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.purple-splashTwo{
-  background-image: url(../assets/purple\ 2.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.purple-splashThree{
-  background-image: url(../assets/purple\ 3.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.purple-splashFour{
-  background-image: url(../assets/purple\ 4\ .png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.purple-splashFive{
-  background-image: url(../assets/purple\ 5.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.orange-splashOne{
-  background-image: url(../assets/orange\ 1.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.orange-splashTwo{
-  background-image: url(../assets/orange\ 2.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.orange-splashThree{
-  background-image: url(../assets/orange\ 3.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.orange-splashFour{
-  background-image: url(../assets/orange\ 4\ .png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.orange-splashFive{
-  background-image: url(../assets/orange\ 5.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-.grid-two div.orange-splashSix{
-  background-image: url(../assets/orange\ 6.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.lightPinkOverTurq-one{
-  background-image: url(../assets/light\ pink\ over\ turq\ 1\ .png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.lightPinkOverTurq-two{
-  background-image: url(../assets/light\ pink\ over\ turq\ 2.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-.grid-two div.lightPinkOverTurq-three{
-  background-image: url(../assets/light\ pink\ over\ turq\ 3.png);
-  height: 96px;
-  width: 96px; 
-  background-size: cover;
-  background-position: center;
-}
-
-
- */

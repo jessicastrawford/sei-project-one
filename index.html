@@ -12,49 +12,43 @@
 <body>
   <main>
     <!-- <header>  -->
-      <section class='left-side'>
+      <section class="left-side">
         <h1>Create Your Own Canvas</h1>
       <!-- </header> -->
       <div class="controls-wrapper">
         <button id="start">Click To Start Painting</button>
       </div>
-      <!-- <section class="grid-wrapper"> -->
         <div class="grid-one"></div>
       </section>
-    <section class='winning-left-side no-show'>
+    <section class="winning-left-side no-show">
       <h2>Yay you won, check out your amazing artwork!</h2>
       <button id="restart">Restart</button>
     </section>
-      <div class="easel"> 
+      <section class="easel"> 
         <img class="easel-top" src="./assets/easel top .png" alt="easel">
         <div class="grid-two">
-          <div class='instructions'>
-            <div class='info'>
+          <div class="instructions">
+            <div class="info">
             <h3>How To Play This Game</h3>
           <ul>
           <li>The aim of the game is to make it safely to either of the two canvas' on the other side of the board</li>
           <li>You need to avoid the moving paintbrushes</li>
-          <li>To paint you canvas you need to eat the paint blobs on the board</li>
+          <li>To paint your canvas you need to eat the paint blobs on the board</li>
           </ul>
           <h3>Good Luck!</h3> 
           </div>
         </div>
-
-          <!-- <div class="blue"></div>
-          <div class="purple"></div>
-          <div class="green"></div>
-          <div class="turq"></div>
-          <div class="pink"></div>
-          <div class="lightPink"></div>
-          <div class="orange"></div>
-          <div class="lilac"></div> -->
-        
-          <!-- <div class="turq-top"></div> -->
         </div>
         <img class="easel-bottom" src="./assets/easel bottom NEW.png" alt="easel">
-      </div>
-      
-    <!-- </section> -->
+      </section>
   </main>  
+  <audio id="audio"></audio>
+  <section class="lost">
+  <div class="alert-lost no-show"> 
+    <p> Game Over! <p>
+      <p> Sorry you got hit by a paintbrush</p>
+    <button class="try-again">Try Again</button>
+  </div>
+</section>
 </body>
 </html>
