@@ -23,6 +23,8 @@ An artist twist on the classic arcade game, Frogger. The aim of the game is to g
 
 A solo project to build a functioning browser game with pure JavaScript in 8 days.
 
+Deployed project: [Click here](https://jessicastrawford.github.io/sei-project-one/). 
+
 # Technologies Used
 
 * HTML5 with HTML5 audio
